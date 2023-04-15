@@ -1,0 +1,52 @@
+.recipe {
+    background-color: var(--bg-card);
+    border: 1px solid var(--text);
+    padding: 16px;
+    box-shadow: 8px 8px 0 0 var(--text);
+  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  
+    column-gap: 16px;
+  }
+  
+  @media (max-width: 649.99px) {
+    .recipe {
+      grid-template-areas:
+        "image image image image"
+        "meta meta meta meta"
+        "ingredients ingredients ingredients ingredients"
+        "steps steps steps steps";
+    }
+  }
+  
+  @media (min-width: 650px) {
+    .recipe {
+      grid-template-areas:
+        "image image image meta"
+        "ingredients steps steps steps";
+    }
+  }
+  
+  .recipe h1 {
+    font-weight: var(--font-weight-regular);
+    font-family: var(--type-display);
+    font-size: 2rem;
+  }
+  
+  .recipe .image-wrapper {
+    grid-area: image;
+  }
+  
+  .recipe-meta {
+    grid-area: meta;
+  }
+  
+  .recipe-ingredients {
+    grid-area: ingredients;
+  }
+  
+  .recipe-steps {
+    grid-area: steps;
+  }
+  

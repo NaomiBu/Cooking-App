@@ -1,0 +1,52 @@
+.recipe-grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  @media (max-width: 539.99px) {
+    .recipe-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @media (min-width: 540px) and (max-width: 799.99px) {
+    .recipe-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 800px) {
+    .recipe-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .recipe-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--text);
+    padding: 16px;
+    box-shadow: 4px 4px 0 0 var(--text);
+  }
+  
+  .recipe-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.4rem;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--type-display);
+  }
+  
+  .recipe-card .btn {
+    /* We need to add the first two 
+    lines in order to keep the padding
+    at the bottom of the card. We could
+    also set display: flex on the parent */
+    display: block;
+    max-width: max-content;
+  }
+  
+  .recipe-card .image-wrapper {
+    margin-bottom: 16px;
+  }
+  

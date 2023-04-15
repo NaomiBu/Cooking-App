@@ -1,0 +1,26 @@
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-block: 16px;
+    margin-bottom: min(5vh, 40px);
+    background-color: var(--bg-card);
+    box-shadow: 0 4px 0 0 var(--text);
+  }
+  
+  nav a:first-of-type {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--type-display);
+  }
+  
+  nav a:first-of-type:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-color: var(--primary-60);
+    color: var(--primary-80);
+  }

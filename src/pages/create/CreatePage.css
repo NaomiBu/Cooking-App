@@ -1,0 +1,52 @@
+.create-form {
+    width: min(100%, 800px);
+    margin-inline: auto;
+  
+    background-color: var(--bg-card);
+    border: 1px solid var(--text);
+    padding: 16px;
+    box-shadow: 6px 6px 0 0 var(--text);
+  }
+  
+  .create-form p,
+  .create-form h1 {
+    text-align: center;
+  }
+  
+  .create-form h1 {
+    font-weight: var(--font-weight-regular);
+    font-family: var(--type-display);
+  }
+  
+  .create-form label {
+    display: block;
+    padding: 16px 8px 4px 8px;
+  }
+  
+  .create-form p {
+    margin-bottom: 8px;
+  }
+  
+  .create-form input + input,
+  .create-form input + .input-group {
+    margin-top: 8px;
+  }
+  
+  .create-form .input-group {
+    max-width: 20rem;
+  }
+  
+  .create-form > input,
+  .create-form textarea {
+    width: 100%;
+  }
+  
+  .create-form input[type="submit"] {
+    display: block;
+    margin-top: 24px;
+  }
+  
+  .create-form span[aria-label="required"] {
+    color: red;
+  }
+  
