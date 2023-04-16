@@ -2,7 +2,9 @@ import "./CreatePage.css";
 import { useForm } from "../../hooks/useForm";
 import { FormEvent } from "react";
 import { type Recipe } from "../../components/RecipeList";
-import { useFetch } from "../../hooks/useFetch"
+import { useFetch } from "../../hooks/useFetch";
+import { Navigate } from "react-router-dom";
+
 
 // type NewRecipe = {
 //   title: string;
@@ -25,12 +27,16 @@ const initialFormData = {
 };
 
   
-  export default function Create() {
-    const { formData, updateFormField } = useForm<RecipeForm>(initialFormData);
+  export default function CreatePage() {
 
+    const { postData, data, error } = useFetch<NewRecipe>(
+      `${process.env.REACT_APP_DB_URL}`,
+      { method: "POST" }
+    );
+
+    const { formData, updateFormField } = useForm<RecipeForm>(initialFormData);
+    
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault(); // prevent the default submit event which reloads the page
-      const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
       
         const ingredientsAsArray = formData.ingredients
@@ -41,8 +47,17 @@ const initialFormData = {
           ...formData,
           ingredients: ingredientsAsArray,
         });
+    
       };
-    };
+      if (data) { return <Navigate to="/" />};
+      
+      if (error)
+    return (
+      <p aria-live="polite" role="status">
+        {error.message}
+      </p>
+    );
+ 
     return (
       <form className="create-form" onSubmit={handleSubmit}>
         <h2>Create recipe</h2>

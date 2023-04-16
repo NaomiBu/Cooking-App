@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
   
   import "./RecipeList.css";
   import { getCookingTime } from "../utils/getCookingTime";
-  
+
   export type Recipe = {
     id: string;
     title: string;
@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
             <div className="image-wrapper">
               <img src={recipe.image} alt="" />
             </div>
+  
 
       <time dateTime={getCookingTime(recipe.cookingTime).dateTime}>
       {getCookingTime(recipe.cookingTime).readable}

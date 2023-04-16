@@ -23,7 +23,7 @@ if (!data)
 
  const { title, cookingTime, image, ingredients, method } = data;
 
- const steps = method.split(/[0-9]+\\./).filter((step) => step);
+ const steps = method.split(/[0-9]+\./).filter((step) => step);
 
  return (
   <article className="recipe">
